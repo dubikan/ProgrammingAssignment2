@@ -12,7 +12,7 @@ makeCacheMatrix <- function(x = matrix(),...) {
     }
     get <- function() x     ## return matrix
     setinverse <- function(inverse) solvedm <<- inverse 
-                                    ## cache inverse to parent frame
+                                    ## cache inverse to parent environment
     getinverse <- function() solvedm    ## return cached inverse
     list(set = set, get = get,
          setinverse = setinverse,
@@ -20,7 +20,7 @@ makeCacheMatrix <- function(x = matrix(),...) {
 }
 
 
-## cacheSolve retrieves the caches inverse from makeCacheMatrix. If no inverse 
+## cacheSolve retrieves the cache's inverse from makeCacheMatrix. If no inverse 
 ## is cached, it solves the inverse and caches it using makeCacheMatrix, before
 ## returning the inverse.
 
